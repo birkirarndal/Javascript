@@ -1,0 +1,59 @@
+﻿//1 Null þíðir að valueið er ekkert og undefined þíðir að það er engin value
+//2 use strict lætur kóðan keyra í strict mode. Þá getur þú ekki notað t.d. óskilgreindar variables.
+//3 const getur ekki verið breytt eftir að const breytan hefur verið skilgreint. Munurinn á var og let er scope þeirra. Var er fall scopeað og let er block scopeað.
+//4
+for (let x = 9; x >= 1; x--){
+    console.log("hello " + x);
+}
+//5
+	//fall 1
+	function fall(){ for (let x = 1; x <=10; x++){ console.log(x);}}
+	fall();
+	//fall 2
+	let fall = () => {for (let x = 1; x <=10; x++){ console.log(x);}}
+	fall();
+	//fall 3
+	let fall = function a(){ for (let x = 1; x <=10; x++){ console.log(x);}}
+	fall();
+//6 kóðinn kallar byrtir glugga á vefsíðuna sem stendur hello world. svigarnir láta fallaið keyra um leið og það er búið til. Þetta heitir Immediately-Invoked Function Expression (IIFE).
+//7 það að skilgreina fallið a inn í fallinu b virðist breyta scope-i á a þannig að a = 10 er bara til inn í fallinu b í stað þess að breyta gildinu á breytuni a fyrir utan fallið b.
+"use strict";
+let a = 1;
+b();
+function b() {
+	function a() {}
+	a = 10;
+	return;
+}
+console.log(a);
+//8
+var test = [12, 929, 11, 3, 199, 1000, 7, 1, 24, 37, 4,
+    19, 300, 3775, 299, 36, 209, 148, 169, 299,
+    6, 109, 20, 58, 139, 59, 3, 1, 139
+];
+let x = 0;
+
+test.forEach(function(num) {
+    if (num % 3 === 0){
+        test[x] = num + 100;
+    }
+    x += 1;
+});
+//9
+var bills = [50.23, 19.12, 34.01,
+    100.11, 12.15, 9.90, 29.11, 12.99,
+    10.00, 99.22, 102.20, 100.10, 6.77, 2.22
+];
+var totals = bills.map(function(bill) {
+    bill *= 1.15;
+    return Number(bill.toFixed(2));
+});
+console.log(totals);
+//10
+function fall1(){
+    fall2();
+}
+function fall2() {
+    fall1();
+}
+fall1();
