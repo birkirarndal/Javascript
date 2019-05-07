@@ -1,23 +1,8 @@
 body {
-    max-width: 100em;
+    max-width: 60em;
     margin: 0 auto;
     text-align: center;
 }
-/*
-li {
-    display: inline-block;
-    list-style-type: none;
-    padding: 5px;
-}
-span {
-    text-align: justify;
-}
-
-
-img {
-    display: block;
-    margin: 0 auto;
-}*/
 
 main {
     padding: 1em;
@@ -31,4 +16,15 @@ main div {
     display: inline-block;
     text-align: justify;
 }
+.search {
+    
+    width: 100%;
+}
+.date {
+    display: block;
+    width: 16%;
+}
 
+.hide {
+    display: none;
+}
